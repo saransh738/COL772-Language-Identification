@@ -13,14 +13,11 @@ with open(sys.argv[2], 'r', encoding='utf-8') as fp:
         valid_data = json.load(fp)
         
 test_X = []
-test_labels = []
     
 for i in range(len(valid_data)):
     test_X.append(valid_data[i]['text'])
-    test_labels.append(valid_data[i]['langid']) 
     
 test_X = np.array(test_X)
-test_labels = np.array(test_labels)
 
 def text_processing(text):
     punctuations = string.punctuation
