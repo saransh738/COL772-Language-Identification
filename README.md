@@ -28,3 +28,17 @@ We will assess the predictive power of submission using the MicroF1 and MacroF1 
 * For a test text written in English, we increment the FP and FN by 1 if the submission makes a mistake.
 * For a test text written in a language other than English, we increment TP by 1 if the submission identifies the language correctly. Otherwise, we increment both FP and FN by 1.
 We compute Precision, Recall and F1 using TP, FP and FN counts. Observe that our MicroF1 has a special treatment for English differently. Similarly, we compute these values for each language (other than English) to compute Macro F1.
+
+## Usage
+### Using run.sh
+The command to train the model is
+````
+bash run_model.sh train <path_to_data_json> <path_to_save>
+````
+This command should save the trained model using the data given at location path_to_data_json. Further, it must save the trained model and other necessary files in the path_to_save directory.
+
+The command to run inference using the model is
+````
+bash run_model.sh test <path_to_save> <path_to_test_json> output.txt
+````
+This command loads the model saved in path_to_save and predicts the language for each sample from the JSON file located at path_to_test_json. Further, it must store the predicted languages in output.txt. Each line in output.txt should include language IDs corresponding to each sample in the test data.
