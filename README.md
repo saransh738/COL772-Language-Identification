@@ -22,14 +22,14 @@ In this assignment, we will explore non-neural techniques for classification lik
 * Perform a good hype-parameter search and select the ones that work the best.
 * Explore strategies like One v/s One, One v/s All for Multiclass classification.
 
-## Evaluation Metric
+## Evaluation Metric:
 We will assess the predictive power of submission using the MicroF1 and MacroF1 scores. For this assignment, we compute MicroF1 and MacroF1 on the test set as follows
 * We initialize counts for true positive (TP), false positive (FP) and false negative (FN) to zero.
 * For a test text written in English, we increment the FP and FN by 1 if the submission makes a mistake.
 * For a test text written in a language other than English, we increment TP by 1 if the submission identifies the language correctly. Otherwise, we increment both FP and FN by 1.
 We compute Precision, Recall and F1 using TP, FP and FN counts. Observe that our MicroF1 has a special treatment for English differently. Similarly, we compute these values for each language (other than English) to compute Macro F1.
 
-## Usage
+## Usage:
 ### Using run.sh
 The command to train the model is
 ````
